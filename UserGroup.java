@@ -7,6 +7,9 @@ There is always a root group called ​Root ​ to include everything.
  */
 
 public class UserGroup {
+	private String ID;
+	private UserGroup root;
+	
 	
 	private UserGroup() {
 	
