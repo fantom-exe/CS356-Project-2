@@ -32,8 +32,64 @@
  */
 
 import javax.swing.*;
+import java.awt.*;
 
 public class AdminControlPanelUI extends JFrame {
-
-
+	// main panel
+	private JPanel mainPanel = new JPanel();
+	
+	// center
+	private JPanel centerPanel = new JPanel();
+	private JTextArea userList = new JTextArea(25, 25);
+	private JScrollPane userListScroll = new JScrollPane(userList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+	
+	// east
+	private JPanel eastPanel = new JPanel();
+	private JTextArea userID = new JTextArea();
+	private JButton addUser = new JButton("Add User");
+	private JTextArea groupID = new JTextArea();
+	private JButton addGroup = new JButton("Add Group");
+	private JButton userView = new JButton("User View");
+	
+	// south
+	private JPanel southPanel = new JPanel();
+	
+	
+	AdminControlPanelUI() {
+		// frame
+		super("Twitter");
+		setSize(700, 450);
+		setResizable(false);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		
+		// main panel
+		mainPanel.setLayout(new BorderLayout());
+		
+		mainPanel.add(centerPanel, BorderLayout.CENTER);
+		mainPanel.add(eastPanel, BorderLayout.EAST);
+		mainPanel.add(southPanel, BorderLayout.SOUTH);
+		
+		// center panel - user view
+//		centerPanel.setLayout(new BorderLayout());
+		
+		centerPanel.add(userList);
+		centerPanel.add(userListScroll, BorderLayout.CENTER);
+		
+		// east panel
+//		eastPanel.setLayout(new BorderLayout());
+		
+		eastPanel.add(userID);
+		eastPanel.add(addUser);
+		eastPanel.add(groupID);
+		eastPanel.add(addGroup);
+		eastPanel.add(userView);
+		
+		// buttons - south panel
+		
+		
+		// frame
+		add(mainPanel);
+		setVisible(true);
+	}
+	
 }

@@ -54,16 +54,20 @@ public class User {
 		return strFollowers;
 	}
 	
-	// Add follower to list
+	// Follow this user
 	public void follow(String userID) {
 		followers.add(userID);
 	}
 	
-	// Get list of people followed by user
+	// Get list of people followed by the user
 	public String getFollowings() {
+		String strFollowings = "";
 		
+		for (int i = 0; i < followings.size(); i++) {
+			strFollowings += followings.get(i) + "\n";
+		}
 		
-		return "";
+		return strFollowings;
 	}
 	
 	// Add person's ID to list of people followed by user
