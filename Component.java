@@ -1,8 +1,7 @@
 import javax.swing.tree.MutableTreeNode;
 import javax.swing.tree.TreeNode;
 import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.List;
+import java.util.*;
 
 public abstract class Component implements Observer, Subject, Visitable, MutableTreeNode {
 	String id;
@@ -37,7 +36,7 @@ public abstract class Component implements Observer, Subject, Visitable, Mutable
 	@Override
 	public void remove(MutableTreeNode node) {
 		if (!this.isLeaf()) {
-			this.child.remove((Component) node);
+			this.child.remove(node);
 		}
 	}
 

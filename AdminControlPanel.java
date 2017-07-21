@@ -436,22 +436,63 @@ public class AdminControlPanel extends javax.swing.JFrame {
 		// Check no spaces
 		List<String> checkSpaces = userValidationVisitor.checkSpaces();
 		if (checkUnique.isEmpty() && checkSpaces.isEmpty())
-			JOptionPane.showMessageDialog(this, "All IDs are Valid");
+			JOptionPane.showMessageDialog(this, "All User IDs are Valid.");
 			
 		else {
 			String message = "\n";
 			
+			// unique
 			for (String check : checkUnique)
 				message += check + "\n";
 			
+			// spaces
 			for (String check : checkSpaces)
 				message += check + "\n";
 			
-			JOptionPane.showMessageDialog(this, "Invalid IDs: " + message);
+			JOptionPane.showMessageDialog(this, "Invalid IDs Found: " + message);
 		}
-
-
+		
 	}//GEN-LAST:event_btnValidateActionPerformed
+	
+	private void btnAddUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddUserActionPerformed
+		String userIdText = userId.getText();
+		userId.setText("");
+		DefaultTreeModel model = (DefaultTreeModel) treeComponent.getModel();
+		Component root = (Group) model.getRoot();
+		Component selectedNode = (Component) treeComponent.getLastSelectedPathComponent();
+		String id = userIdText.trim();
+		
+		if (id.equals("")) {
+			// lMessage.setText("You must enter an user name");
+		} else {
+			if (selectedNode != null) {
+				if (!root.contains(id)) {
+					if (selectedNode instanceof Group) {
+						Component newUser = new User(id, (Group) selectedNode);
+						System.out.println("New user created: " + id);
+						
+						//lMessage.setText("");
+						model.insertNodeInto(newUser, selectedNode, selectedNode.getChildCount());
+						model.reload(newUser);
+					} else {
+						// lMessage.setText("User can only be added to a group");
+					}
+				}
+			} else {
+				if (!root.contains(id)) {
+					Component newUser = new User(id, (Group) root);
+					System.out.println("New user created: " + id);
+					root.insert(newUser);
+					model.reload();
+				}
+			}
+		}
+		
+		//update user total
+		UserTotalVisitor totalVisitor = new UserTotalVisitor();
+		totalVisitor.visit(root);
+		labelUsersTotal.setText(totalVisitor.getCount() + "");
+	}//GEN-LAST:event_btnAddUserActionPerformed
 
 	private void btnAddGroupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddGroupActionPerformed
 		// TODO add group
@@ -469,83 +510,44 @@ public class AdminControlPanel extends javax.swing.JFrame {
 						Component newGroup = new Group(group, selectedNode);
 						System.out.println("New group created: " + group);
 
-						// lMessage.setText("");
 						model.insertNodeInto(newGroup, selectedNode, selectedNode.getChildCount());
 						model.reload(newGroup);
-					} else {
-						//lMessage.setText("Group can only be added inside a group");
 					}
 				}
 			} else {
 				if (!root.contains(group)) {
-					Component newGroup = new Group(group, (Group) root);
+					Component newGroup = new Group(group, root);
 					System.out.println("New group created: " + group);
+					
 					root.insert(newGroup);
 					model.reload();
 				}
 			}
 		}
+		
 		groupId.setText("");
-		//update user total
+		
+		// Update total users
 		GroupTotalVisitor totalVisitor = new GroupTotalVisitor();
 		totalVisitor.visit(root);
 		labelGroupTotal.setText(totalVisitor.getCount() + "");
-
 	}//GEN-LAST:event_btnAddGroupActionPerformed
 
 	private void btnOpenUserViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOpenUserViewActionPerformed
 		// TODO open
 		Component node = (Component) treeComponent.getLastSelectedPathComponent();
+		
 		if (node != null && node instanceof User) {
 			UserView userView = new UserView((User) node, root);
 			userView.setVisible(true);
 		}
 	}//GEN-LAST:event_btnOpenUserViewActionPerformed
 
-	private void btnAddUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddUserActionPerformed
-		String userIdText = userId.getText();
-		userId.setText("");
-		DefaultTreeModel model = (DefaultTreeModel) treeComponent.getModel();
-		Component root = (Group) model.getRoot();
-		Component selectedNode = (Component) treeComponent.getLastSelectedPathComponent();
-		String id = userIdText.trim();
-
-		if (id.equals("")) {
-			// lMessage.setText("You must enter an user name");
-		} else {
-			if (selectedNode != null) {
-				if (!root.contains(id)) {
-					if (selectedNode instanceof Group) {
-						Component newUser = new User(id, (Group) selectedNode);
-						System.out.println("New user created: " + id);
-
-						//lMessage.setText("");
-						model.insertNodeInto(newUser, selectedNode, selectedNode.getChildCount());
-						model.reload(newUser);
-					} else {
-						// lMessage.setText("User can only be added to a group");
-					}
-				}
-			} else {
-				if (!root.contains(id)) {
-					Component newUser = new User(id, (Group) root);
-					System.out.println("New user created: " + id);
-					root.insert(newUser);
-					model.reload();
-				}
-			}
-		}
-
-		//update user total
-		UserTotalVisitor totalVisitor = new UserTotalVisitor();
-		totalVisitor.visit(root);
-		labelUsersTotal.setText(totalVisitor.getCount() + "");
-	}//GEN-LAST:event_btnAddUserActionPerformed
-
 	private void btnFindLastUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindLastUpdateActionPerformed
 		// TODO add your handling code here:
 		LastUpdatedVisitor lastUpdatedVisitor = new LastUpdatedVisitor();
 		lastUpdatedVisitor.visit(root);
+		
 		User user = lastUpdatedVisitor.getUser();
 		lastUpdatedUser.setText(user != null ? user.getId() + " at " + user.getLastUpdateTimeString() : "Not available");
 	}//GEN-LAST:event_btnFindLastUpdateActionPerformed
@@ -578,11 +580,7 @@ public class AdminControlPanel extends javax.swing.JFrame {
 		//</editor-fold>
 
 		/* Create and display the form */
-		java.awt.EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				new AdminControlPanel().setVisible(true);
-			}
-		});
+		java.awt.EventQueue.invokeLater(() -> new AdminControlPanel().setVisible(true));
 	}
 
 	// Variables declaration - do not modify//GEN-BEGIN:variables
