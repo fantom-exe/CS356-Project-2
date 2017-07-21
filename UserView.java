@@ -297,7 +297,7 @@ public class UserView extends javax.swing.JFrame {
 		
 		if (!userId.trim().equals(""))
 			if (root.contains(userId)) {
-				User foundUser = root.getById(userId);
+				User foundUser = root.getUserByID(userId);
 				user.follow(foundUser);
 			}
 

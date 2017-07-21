@@ -92,14 +92,14 @@ public class User extends Component {
 
 	@Override
 	public void notifyObserver() {
-		for (Observer observer : observers) {
+		for (Observer observer : observers)
 			observer.notify();
-		}
 	}
 
 	@Override
 	public void update(String message) {
 		this.newsFeed.add(new Tweet(message));
+		
 		for (Observer observer : observers) {
 			((User) observer).lastUpdateTime = System.currentTimeMillis();
 			((User) observer).newsFeed.add(new Tweet(message));
@@ -141,7 +141,7 @@ public class User extends Component {
 	}
 
 	@Override
-	public User getById(String id) {
+	public User getUserByID(String id) {
 		if (this.id.equals(id)) {
 			return this;
 		} else {

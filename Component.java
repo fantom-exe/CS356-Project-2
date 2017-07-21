@@ -13,7 +13,7 @@ public abstract class Component implements Observer, Subject, Visitable, Mutable
 
 	public abstract boolean contains(String id);
 
-	public abstract User getById(String id);
+	public abstract User getUserByID(String id);
 
 	@Override
 	public void insert(MutableTreeNode child, int index) {

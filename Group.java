@@ -52,7 +52,7 @@ public class Group extends Component {
 	}
 
 	@Override
-	public User getById(String id) {
+	public User getUserByID(String id) {
 		for (Component component : child) {
 			if (component instanceof User) {
 				User found = (User) component;
@@ -60,7 +60,7 @@ public class Group extends Component {
 					return found;
 				}
 			} else {
-				return component.getById(id);
+				return component.getUserByID(id);
 			}
 		}
 		return null;
