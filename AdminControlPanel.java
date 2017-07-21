@@ -442,16 +442,18 @@ public class AdminControlPanel extends javax.swing.JFrame {
 		
 		// Check no spaces
 		List<String> checkSpaces = userValidationVisitor.checkSpaces();
-		if (checkUnique.isEmpty() && checkSpaces.isEmpty()) {
+		if (checkUnique.isEmpty() && checkSpaces.isEmpty())
 			JOptionPane.showMessageDialog(this, "All IDs are Valid");
-		} else {
+			
+		else {
 			String message = "\n";
-			for (String check : checkUnique) {
+			
+			for (String check : checkUnique)
 				message += check + "\n";
-			}
-			for (String check : checkSpaces) {
+			
+			for (String check : checkSpaces)
 				message += check + "\n";
-			}
+			
 			JOptionPane.showMessageDialog(this, "Invalid IDs: " + message);
 		}
 
