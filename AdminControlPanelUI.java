@@ -78,6 +78,7 @@ public class AdminControlPanelUI extends javax.swing.JFrame {
 		GroupTotalVisitor totalGroupVisitor = new GroupTotalVisitor();
 		totalGroupVisitor.visit(root);
 		labelGroupTotal.setText(String.valueOf(totalGroupVisitor.getCount()));
+		
 		treeComponent.setModel(new DefaultTreeModel(rootNode));
 		
 		// A3
@@ -457,30 +458,31 @@ public class AdminControlPanelUI extends javax.swing.JFrame {
 	private void btnAddUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddUserActionPerformed
 		String userIdText = userId.getText();
 		userId.setText("");
+		
 		DefaultTreeModel model = (DefaultTreeModel) treeComponent.getModel();
+		
 		Component root = (Group) model.getRoot();
 		Component selectedNode = (Component) treeComponent.getLastSelectedPathComponent();
+		
 		String id = userIdText.trim();
 		
 		if (id.equals("")) {
-			// lMessage.setText("You must enter an user name");
-		} else {
+			System.out.println("Blank username entered!");
+		}
+		else {
 			if (selectedNode != null) {
-				if (!root.contains(id)) {
+				if (!root.contains(id))
 					if (selectedNode instanceof Group) {
-						Component newUser = new User(id, (Group) selectedNode);
+						Component newUser = new User(id, selectedNode);
 						System.out.println("New user created: " + id);
 						
-						//lMessage.setText("");
 						model.insertNodeInto(newUser, selectedNode, selectedNode.getChildCount());
 						model.reload(newUser);
-					} else {
-						// lMessage.setText("User can only be added to a group");
 					}
-				}
-			} else {
+			}
+			else {
 				if (!root.contains(id)) {
-					Component newUser = new User(id, (Group) root);
+					Component newUser = new User(id, root);
 					System.out.println("New user created: " + id);
 					root.insert(newUser);
 					model.reload();
@@ -488,7 +490,7 @@ public class AdminControlPanelUI extends javax.swing.JFrame {
 			}
 		}
 		
-		//update user total
+		// Update total users
 		UserTotalVisitor totalVisitor = new UserTotalVisitor();
 		totalVisitor.visit(root);
 		labelUsersTotal.setText(totalVisitor.getCount() + "");
@@ -499,10 +501,11 @@ public class AdminControlPanelUI extends javax.swing.JFrame {
 		DefaultTreeModel model = (DefaultTreeModel) treeComponent.getModel();
 		Component root = (Group) model.getRoot();
 		Component selectedNode = (Component) treeComponent.getLastSelectedPathComponent();
+		
 		String group = groupId.getText();
 
 		if (group.trim().equals("")) {
-			// lMessage.setText("You must enter a group name");
+			System.out.println("Blank Group Name entered!");
 		} else {
 			if (selectedNode != null) {
 				if (!root.contains(group)) {
@@ -514,7 +517,8 @@ public class AdminControlPanelUI extends javax.swing.JFrame {
 						model.reload(newGroup);
 					}
 				}
-			} else {
+			}
+			else {
 				if (!root.contains(group)) {
 					Component newGroup = new Group(group, root);
 					System.out.println("New group created: " + group);
@@ -552,9 +556,7 @@ public class AdminControlPanelUI extends javax.swing.JFrame {
 		lastUpdatedUser.setText(user != null ? user.getId() + " at " + user.getLastUpdateTimeString() : "Not available");
 	}//GEN-LAST:event_btnFindLastUpdateActionPerformed
 
-	/**
-	 * @param args the command line arguments
-	 */
+	// MAIN //
 	public static void main(String args[]) {
 		/* Set the Nimbus look and feel */
 		//<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -582,6 +584,7 @@ public class AdminControlPanelUI extends javax.swing.JFrame {
 		/* Create and display the form */
 		java.awt.EventQueue.invokeLater(() -> new AdminControlPanelUI().setVisible(true));
 	}
+	// .. //
 
 	// Variables declaration - do not modify//GEN-BEGIN:variables
 	private javax.swing.JPanel actionsPanel;
