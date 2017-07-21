@@ -151,7 +151,7 @@ public class AdminControlPanelUI extends javax.swing.JFrame {
 		btnAddUser = new javax.swing.JButton();
 		scrollPanel = new javax.swing.JScrollPane();
 		treeComponent = new javax.swing.JTree();
-		addUserPanel8 = new javax.swing.JPanel();
+		
 		lastUpdatedUser = new javax.swing.JTextField();
 		btnFindLastUpdate = new javax.swing.JButton();
 
@@ -374,31 +374,10 @@ public class AdminControlPanelUI extends javax.swing.JFrame {
 		treeComponent.setBorder(javax.swing.BorderFactory.createTitledBorder("Tree View"));
 		scrollPanel.setViewportView(treeComponent);
 
-		addUserPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder("Find the last updated User"));
-
 		lastUpdatedUser.setEnabled(false);
 
 		btnFindLastUpdate.setText("Find ");
 		btnFindLastUpdate.addActionListener(evt -> btnFindLastUpdateActionPerformed(evt));
-
-		javax.swing.GroupLayout addUserPanel8Layout = new javax.swing.GroupLayout(addUserPanel8);
-		addUserPanel8.setLayout(addUserPanel8Layout);
-		addUserPanel8Layout.setHorizontalGroup(
-			addUserPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-			.addGroup(addUserPanel8Layout.createSequentialGroup()
-				.addComponent(lastUpdatedUser)
-				.addGap(18, 18, 18)
-				.addComponent(btnFindLastUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-				.addContainerGap())
-		);
-		addUserPanel8Layout.setVerticalGroup(
-			addUserPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-			.addGroup(addUserPanel8Layout.createSequentialGroup()
-				.addGroup(addUserPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-					.addComponent(lastUpdatedUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-					.addComponent(btnFindLastUpdate))
-				.addGap(0, 14, Short.MAX_VALUE))
-		);
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
 		getContentPane().setLayout(layout);
@@ -409,16 +388,15 @@ public class AdminControlPanelUI extends javax.swing.JFrame {
 				.addComponent(scrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
 				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-					.addComponent(actionsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addComponent(addUserPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-		);
+					.addComponent(actionsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout
+							.DEFAULT_SIZE, Short.MAX_VALUE))
+			));
 		layout.setVerticalGroup(
 			layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 			.addGroup(layout.createSequentialGroup()
 				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 					.addComponent(scrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
 					.addGroup(layout.createSequentialGroup()
-						.addComponent(addUserPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
 						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 						.addComponent(actionsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
 				.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
