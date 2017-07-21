@@ -2,10 +2,10 @@ import java.util.*;
 import java.text.SimpleDateFormat;
 
 public class User extends Component {
-
 	private Set<String> followings;
 	private List<Tweet> newsFeed;
 	private Set<Observer> observers = new HashSet<>();
+	
 	private long lastUpdateTime; // A3
 
 	User(String id, Component parent) {
@@ -20,21 +20,31 @@ public class User extends Component {
 	String getId() {
 		return id;
 	}
+	
+	Set<String> getFollowings() {
+		return followings;
+	}
+	
+	public List<Tweet> getNewsFeed() {
+		return newsFeed;
+	}
 
+	// unused
 	public void setId(String id) {
 		this.id = id;
 	}
 
 	boolean follow(User other) {
+		// Do nothing //
 		if (this.equals(other))
 			return false;
-		
 		if (other == null)
 			return false;
+		// .. //
 		
 		other.register(this);
 		
-		if (followings.contains(other.getId()))
+		if (followings.contains(other.getId())) // already following
 			return false;
 		else {
 			followings.add(other.getId());
@@ -47,10 +57,6 @@ public class User extends Component {
 	void tweet(String message) {
 		this.lastUpdateTime = System.currentTimeMillis();
 		update(message);
-	}
-
-	Set<String> getFollowings() {
-		return followings;
 	}
 
 	@Override
@@ -67,19 +73,14 @@ public class User extends Component {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
+		
 		// True
 		if (this == obj)
 			return true;
 		
 		final User other = (User) obj;
-		if (!Objects.equals(this.id, other.id))
-			return false;
-		else
-			return true;
-	}
-
-	public List<Tweet> getNewsFeed() {
-		return newsFeed;
+		
+		return Objects.equals(this.id, other.id);
 	}
 
 	@Override
@@ -119,27 +120,29 @@ public class User extends Component {
 		return this.id.equals(id);
 	}
 
-	public String getCreationTime() {
+	// A3 //
+	String getCreationTime() {
 		Date date = new Date(creationTime);
-		SimpleDateFormat df2 = new SimpleDateFormat("dd/MM/yy hh:mm:ss");
-		String dateText = df2.format(date);
-		return dateText;
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yy hh:mm:ss");
+		
+		return dateFormat.format(date);
 	}
+	
+	long getLastUpdateTime() {
+		return lastUpdateTime;
+	}
+	
+	String getLastUpdateTimeString() {
+		Date date = new Date(lastUpdateTime);
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yy hh:mm:ss");
+		
+		return dateFormat.format(date);
+	}
+	// .. //
 
 	@Override
 	public String toString() {
 		return id;
-	}
-
-	public long getLastUpdateTime() {
-		return lastUpdateTime;
-	}
-
-	public String getLastUpdateTimeString() {
-		Date date = new Date(lastUpdateTime);
-		SimpleDateFormat df2 = new SimpleDateFormat("dd/MM/yy hh:mm:ss");
-		String dateText = df2.format(date);
-		return dateText;
 	}
 
 	@Override

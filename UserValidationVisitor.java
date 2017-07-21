@@ -1,7 +1,7 @@
-
 import java.util.ArrayList;
 import java.util.List;
 
+// A3
 public class UserValidationVisitor implements Visitor {
 	private List<String> IDs = new ArrayList<>();
 
