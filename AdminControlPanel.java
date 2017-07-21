@@ -55,8 +55,19 @@ public class AdminControlPanel extends javax.swing.JFrame {
 		User stu9 = new User("stu9", CS356Session01); // CS356Session01 -> stu9
 		User stu10 = new User("stu10", CS356Session01); // CS356Session01 -> stu10
 		
-//		User stu8 = new User("stu8", CS356Session01); // CS356Session01 -> stu8
+		CS356Session01.insert(stu8); // CS356Session01 -> stu8
+		CS356Session01.insert(stu9); // CS356Session01 -> stu9
+		CS356Session01.insert(stu10); // CS356Session01 -> stu10
 		
+		User stu4 = new User("stu4", CS356);
+		
+		CS356.insert(stu4); // CS356 -> stu8
+		
+		User oostu = new User("oostu", root);
+		User ppstu2 = new User("ppstu2", root);
+		
+		root.insert(oostu); // root -> oostu
+		root.insert(ppstu2); // root -> ppstu2
 		
 		// Update user total
 		UserTotalVisitor totalUserVisitor = new UserTotalVisitor();
