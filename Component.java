@@ -1,6 +1,4 @@
-import javax.swing.tree.MutableTreeNode;
-import javax.swing.tree.TreeNode;
-import java.util.ArrayList;
+import javax.swing.tree.*;
 import java.util.*;
 
 public abstract class Component implements Observer, Subject, Visitable, MutableTreeNode {
