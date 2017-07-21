@@ -6,14 +6,14 @@ import java.util.Timer;
 
 import static javax.swing.BorderFactory.createTitledBorder;
 
-public class UserView extends JFrame {
+public class UserViewUI extends JFrame {
 	private User user;
 	private Component root;
 	
 	private final DefaultListModel<String> followingModel = new DefaultListModel<>();
 	private final DefaultListModel<String> newsfeedModel = new DefaultListModel<>();
 
-	UserView(User user, Component root) {
+	UserViewUI(User user, Component root) {
 		this.user = user;
 		this.root = root;
 		

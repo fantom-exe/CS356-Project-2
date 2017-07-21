@@ -13,29 +13,25 @@ public abstract class Component implements Observer, Subject, Visitable, Mutable
 
 	@Override
 	public void insert(MutableTreeNode child, int index) {
-		if (this.getAllowsChildren()) {
+		if (this.getAllowsChildren())
 			this.child.add(index, (Component) child);
-		}
 	}
 
 	public void insert(MutableTreeNode child) {
-		if (this.getAllowsChildren()) {
+		if (this.getAllowsChildren())
 			this.child.add((Component) child);
-		}
 	}
 
 	@Override
 	public void remove(int index) {
-		if (!this.isLeaf()) {
+		if (!this.isLeaf())
 			this.child.remove(index);
-		}
 	}
 
 	@Override
 	public void remove(MutableTreeNode node) {
-		if (!this.isLeaf()) {
+		if (!this.isLeaf())
 			this.child.remove(node);
-		}
 	}
 
 	@Override
@@ -90,13 +86,13 @@ public abstract class Component implements Observer, Subject, Visitable, Mutable
 
 	public List<Tweet> getNewsFeed() {
 		List<Tweet> tweets = new ArrayList<>();
-		if (!isLeaf()) {
-			for (Component c : child) {
+		
+		if (!isLeaf())
+			for (Component c : child)
 				tweets.addAll(c.getNewsFeed());
-			}
-		} else {
+		else
 			tweets.addAll(getNewsFeed());
-		}
+		
 		return tweets;
 	}
 	

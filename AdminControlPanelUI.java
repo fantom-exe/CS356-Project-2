@@ -4,24 +4,24 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class AdminControlPanel extends javax.swing.JFrame {
+public class AdminControlPanelUI extends javax.swing.JFrame {
 	// Singleton
-	public static AdminControlPanel instance;
+	public static AdminControlPanelUI instance;
 	Component root = new Group("root", null);
 	javax.swing.tree.TreeNode rootNode = root;
 
-	static AdminControlPanel getInstance() {
+	static AdminControlPanelUI getInstance() {
 		if (instance == null) {
-			synchronized (AdminControlPanel.class) {
+			synchronized (AdminControlPanelUI.class) {
 				if (instance == null)
-					instance = new AdminControlPanel();
+					instance = new AdminControlPanelUI();
 			}
 		}
 		
 		return instance;
 	}
 
-	AdminControlPanel() {
+	AdminControlPanelUI() {
 		// Initialize
 		initComponents();
 		setTitle("Admin");
@@ -538,8 +538,8 @@ public class AdminControlPanel extends javax.swing.JFrame {
 		Component node = (Component) treeComponent.getLastSelectedPathComponent();
 		
 		if (node != null && node instanceof User) {
-			UserView userView = new UserView((User) node, root);
-			userView.setVisible(true);
+			UserViewUI userViewUI = new UserViewUI((User) node, root);
+			userViewUI.setVisible(true);
 		}
 	}//GEN-LAST:event_btnOpenUserViewActionPerformed
 
@@ -569,18 +569,18 @@ public class AdminControlPanel extends javax.swing.JFrame {
 				}
 			}
 		} catch (ClassNotFoundException ex) {
-			java.util.logging.Logger.getLogger(AdminControlPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+			java.util.logging.Logger.getLogger(AdminControlPanelUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (InstantiationException ex) {
-			java.util.logging.Logger.getLogger(AdminControlPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+			java.util.logging.Logger.getLogger(AdminControlPanelUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (IllegalAccessException ex) {
-			java.util.logging.Logger.getLogger(AdminControlPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+			java.util.logging.Logger.getLogger(AdminControlPanelUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
-			java.util.logging.Logger.getLogger(AdminControlPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+			java.util.logging.Logger.getLogger(AdminControlPanelUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		}
 		//</editor-fold>
 
 		/* Create and display the form */
-		java.awt.EventQueue.invokeLater(() -> new AdminControlPanel().setVisible(true));
+		java.awt.EventQueue.invokeLater(() -> new AdminControlPanelUI().setVisible(true));
 	}
 
 	// Variables declaration - do not modify//GEN-BEGIN:variables
