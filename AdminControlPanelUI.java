@@ -326,7 +326,7 @@ public class AdminControlPanelUI extends javax.swing.JFrame {
 				.addComponent(userId, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
 				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
 				.addComponent(btnAddUser, DEFAULT_SIZE, DEFAULT_SIZE, Short.MAX_VALUE)
-				.addContainerGap())
+				.addContainerGap(200, DEFAULT_SIZE))
 		);
 		addUserPanel7Layout.setVerticalGroup(
 			addUserPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
