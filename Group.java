@@ -9,7 +9,8 @@ public class Group extends Component {
 		this.child = new ArrayList<>();
 		this.creationTime = System.currentTimeMillis();
 	}
-
+	
+	
 	public void add(Component component) {
 		child.add(component);
 	}
@@ -28,22 +29,22 @@ public class Group extends Component {
 
 	@Override
 	public void register(Observer observer) {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
 	@Override
 	public void unregister(Observer observer) {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
 	@Override
 	public void notifyObserver() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
 	@Override
 	public void update(String message) {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
 	@Override

@@ -26,22 +26,24 @@ public class User extends Component {
 	}
 
 	boolean follow(User other) {
-		if (this.equals(other)) {
+		if (this.equals(other))
 			return false;
-		}
-		if (other == null) {
+		
+		if (other == null)
 			return false;
-		}
+		
 		other.register(this);
-		if (followings.contains(other.getId())) {
+		
+		if (followings.contains(other.getId()))
 			return false;
-		} else {
+		else {
 			followings.add(other.getId());
 			return true;
 		}
 
 	}
-
+	
+	// Tweet message
 	void tweet(String message) {
 		this.lastUpdateTime = System.currentTimeMillis();
 		update(message);

@@ -52,7 +52,8 @@ public class UserView extends javax.swing.JFrame {
 		UserPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("User: " + user.getId()));
 
 	}
-
+	
+	// Copied as template //
 	/**
 	 * This method is called from within the constructor to initialize the form.
 	 * WARNING: Do NOT modify this code. The content of this method is always
@@ -279,7 +280,9 @@ public class UserView extends javax.swing.JFrame {
 
 		pack();
 	}// </editor-fold>//GEN-END:initComponents
-
+	// .. //
+	
+	// Post a tweet
 	private void btnPostTweetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPostTweetActionPerformed
 		// TODO add your handling code here:
 		String text = tweetMessageText.getText();
@@ -291,6 +294,7 @@ public class UserView extends javax.swing.JFrame {
 		
 	}//GEN-LAST:event_btnPostTweetActionPerformed
 
+	// Follow user
 	private void btnFollowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFollowActionPerformed
 		String userId = userIdToFollowText.getText();
 		userIdToFollowText.setText("");
