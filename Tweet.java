@@ -11,9 +11,11 @@ public class Tweet {
 		this.message = message;
 		this.ispositive = checkPositive();
 	}
-
+	
+	// Check message for positive words
 	private boolean checkPositive() {
-		List<String> positiveWords = new ArrayList<>(Arrays.asList("good", "beautiful", "great"));
+		List<String> positiveWords = new ArrayList<>(Arrays.asList("good", "great", "awesome", "epic"));
+		
 		for (String word : positiveWords) {
 			if (this.message.toLowerCase().contains(word)) {
 				return true;
@@ -23,12 +25,14 @@ public class Tweet {
 		return false;
 	}
 	
+	
+	boolean isPositive() {
+		return ispositive;
+	}
+	
+	// Use toString instead
 	public String getMessage() {
 		return message;
-	}
-
-	public boolean isPositive() {
-		return ispositive;
 	}
 	
 	@Override

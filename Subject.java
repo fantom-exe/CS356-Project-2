@@ -1,10 +1,12 @@
 
 public interface Subject {
 
-    public void register(Observer observer);
+	void register(Observer observer);
+	
+	// Not used //
+	void unregister(Observer observer);
 
-    public void unregister(Observer observer);
-
-    public void notifyObserver();
-
+	void notifyObserver();
+	//
+	
 }
