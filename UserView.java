@@ -4,6 +4,8 @@ import java.util.*;
 import java.util.TimerTask;
 import java.util.Timer;
 
+import static javax.swing.BorderFactory.createTitledBorder;
+
 public class UserView extends JFrame {
 	private User user;
 	private Component root;
@@ -46,7 +48,7 @@ public class UserView extends JFrame {
 				});
 			}
 		}, 0, 1000);
-		UserPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("User: " + user.getId()));
+		UserPanel.setBorder(createTitledBorder("User: " + user.getId()));
 
 	}
 	
@@ -54,32 +56,44 @@ public class UserView extends JFrame {
 	@SuppressWarnings("unchecked")
 	// <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
 	private void initComponents() {
-
+		// Main panel
 		UserPanel = new javax.swing.JPanel();
+
+		// Panel
 		jPanelFollowing = new javax.swing.JPanel();
 		jScrollPane2 = new javax.swing.JScrollPane();
 		followingList = new javax.swing.JList<>();
+		
+		// Panel
 		jPanelFollowing1 = new javax.swing.JPanel();
 		userIdToFollowText = new javax.swing.JTextField();
 		btnFollow = new javax.swing.JButton();
+		
+		// Panel
 		jPanelFollowing2 = new javax.swing.JPanel();
 		btnPostTweet = new javax.swing.JButton();
 		jScrollPane1 = new javax.swing.JScrollPane();
 		tweetMessageText = new javax.swing.JTextArea();
+		
+		// Panel
 		jPanelFollowing3 = new javax.swing.JPanel();
 		jScrollPane3 = new javax.swing.JScrollPane();
 		tweetList = new javax.swing.JList<>();
+		
+		// Panel
 		jPanelFollowing4 = new javax.swing.JPanel();
 		creationTimeTxt = new javax.swing.JTextField();
+		
+		// Panel
 		jPanelFollowing5 = new javax.swing.JPanel();
 		lastUpdateTxt = new javax.swing.JTextField();
 
-		setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		setResizable(false);
 
-		UserPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("User:"));
+		UserPanel.setBorder(createTitledBorder("User:"));
 
-		jPanelFollowing.setBorder(javax.swing.BorderFactory.createTitledBorder("Current Following"));
+		jPanelFollowing.setBorder(createTitledBorder("Current Following"));
 
 		followingList.setModel(new javax.swing.AbstractListModel<String>() {
 			String[] strings = {  };
@@ -105,14 +119,10 @@ public class UserView extends JFrame {
 				.addGap(33, 33, 33))
 		);
 
-		jPanelFollowing1.setBorder(javax.swing.BorderFactory.createTitledBorder("Follow"));
+		jPanelFollowing1.setBorder(createTitledBorder("Follow"));
 
 		btnFollow.setText("Follow");
-		btnFollow.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				btnFollowActionPerformed(evt);
-			}
-		});
+		btnFollow.addActionListener(evt -> btnFollowActionPerformed(evt));
 
 		javax.swing.GroupLayout jPanelFollowing1Layout = new javax.swing.GroupLayout(jPanelFollowing1);
 		jPanelFollowing1.setLayout(jPanelFollowing1Layout);
@@ -134,7 +144,7 @@ public class UserView extends JFrame {
 				.addGap(0, 11, Short.MAX_VALUE))
 		);
 
-		jPanelFollowing2.setBorder(javax.swing.BorderFactory.createTitledBorder("Tweet"));
+		jPanelFollowing2.setBorder(createTitledBorder("Tweet"));
 
 		btnPostTweet.setText("Post Tweet");
 		btnPostTweet.addActionListener(new java.awt.event.ActionListener() {
@@ -165,7 +175,7 @@ public class UserView extends JFrame {
 			.addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
 		);
 
-		jPanelFollowing3.setBorder(javax.swing.BorderFactory.createTitledBorder("News Feed"));
+		jPanelFollowing3.setBorder(createTitledBorder("News Feed"));
 
 		tweetList.setModel(new javax.swing.AbstractListModel<String>() {
 			String[] strings = {  };
@@ -189,7 +199,7 @@ public class UserView extends JFrame {
 				.addGap(0, 0, Short.MAX_VALUE))
 		);
 
-		jPanelFollowing4.setBorder(javax.swing.BorderFactory.createTitledBorder("Creation Time"));
+		jPanelFollowing4.setBorder(createTitledBorder("Creation Time"));
 
 		creationTimeTxt.setEditable(false);
 
@@ -210,7 +220,7 @@ public class UserView extends JFrame {
 				.addContainerGap())
 		);
 
-		jPanelFollowing5.setBorder(javax.swing.BorderFactory.createTitledBorder("Last Update Time"));
+		jPanelFollowing5.setBorder(createTitledBorder("Last Update Time"));
 
 		lastUpdateTxt.setEditable(false);
 

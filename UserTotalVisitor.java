@@ -1,19 +1,15 @@
-
 public class UserTotalVisitor implements Visitor {
-	private int count = 0;
+	private int visitorCount = 0;
 
-	@Override
 	public void visit(Component component) {
 		if (component instanceof User)
-			count++;
+			visitorCount++;
 		else
 			for (Component child : component.child)
 				visit(child);
-		
 	}
 	
 	int getCount() {
-		return count;
+		return visitorCount;
 	}
-
 }
