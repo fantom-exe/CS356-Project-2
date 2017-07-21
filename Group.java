@@ -15,7 +15,6 @@ public class Group extends Component {
 		child.add(component);
 	}
 
-	@Override
 	public boolean contains(String id) {
 		if (this.id.equals(id))
 			return true;
@@ -26,33 +25,7 @@ public class Group extends Component {
 		
 		return false;
 	}
-
-	@Override
-	public void register(Observer observer) {
-		throw new UnsupportedOperationException("Not supported yet.");
-	}
-
-	@Override
-	public void unregister(Observer observer) {
-		throw new UnsupportedOperationException("Not supported yet.");
-	}
-
-	@Override
-	public void notifyObserver() {
-		throw new UnsupportedOperationException("Not supported yet.");
-	}
-
-	@Override
-	public void update(String message) {
-		throw new UnsupportedOperationException("Not supported yet.");
-	}
-
-	@Override
-	public void accept(Visitor visitor) {
-		visitor.visit(this);
-	}
-
-	@Override
+	
 	public User getUserByID(String id) {
 		for (Component component : child) {
 			if (component instanceof User) {
@@ -67,9 +40,29 @@ public class Group extends Component {
 		return null;
 	}
 	
-	@Override
 	public String toString() {
 		return id;
 	}
-	
+
+	// // // // //
+	public void register(Observer observer) {
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+
+	public void unregister(Observer observer) {
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+
+	public void notifyObserver() {
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+
+	public void update(String message) {
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+
+	public void accept(Visitor visitor) {
+		visitor.visit(this);
+	}
+	// .. //
 }

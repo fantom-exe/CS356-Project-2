@@ -13,6 +13,8 @@ public class User extends Component {
 		this.parent = parent;
 		this.followings = new HashSet<>();
 		this.newsFeed = new ArrayList<>();
+		
+		// A3
 		this.creationTime = System.currentTimeMillis();
 		this.lastUpdateTime = 0;
 	}
