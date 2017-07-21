@@ -5,11 +5,10 @@ import java.util.Enumeration;
 import java.util.List;
 
 public abstract class Component implements Observer, Subject, Visitable, MutableTreeNode {
-
-	protected String id;
-	protected Component parent;
-	protected List<Component> child;
-	protected long creationTime;
+	String id;
+	Component parent;
+	List<Component> child;
+	long creationTime;
 
 	public abstract boolean contains(String id);
 

@@ -1,18 +1,13 @@
-
 import java.util.ArrayList;
 
 public class Group extends Component {
-
+	
+	// init
 	Group(String root, Component parent) {
 		this.id = root;
 		this.parent = parent;
 		this.child = new ArrayList<>();
 		this.creationTime = System.currentTimeMillis();
-	}
-	
-	
-	public void add(Component component) {
-		child.add(component);
 	}
 
 	public boolean contains(String id) {
@@ -42,6 +37,11 @@ public class Group extends Component {
 	
 	public String toString() {
 		return id;
+	}
+	
+	// not used
+	public void add(Component component) {
+		child.add(component);
 	}
 
 	// // // // //

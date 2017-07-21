@@ -55,19 +55,11 @@ public class User extends Component {
 
 	}
 	
-	// Tweet message
+	// Tweet message & update time
 	void tweet(String message) {
 		this.lastUpdateTime = System.currentTimeMillis();
 		update(message);
 	}
-
-	
-	public int hashCode() {
-		int hash = 3;
-		hash = 29 * hash + Objects.hashCode(this.id);
-		return hash;
-	}
-
 	
 	public boolean equals(Object obj) {
 		// False
@@ -84,42 +76,26 @@ public class User extends Component {
 		
 		return Objects.equals(this.id, other.id);
 	}
-
-	
-	public void register(Observer observer) {
-		this.observers.add(observer);
-	}
-
-	
-	public void unregister(Observer observer) {
-		this.observers.remove(observer);
-	}
-
-	
-	public void notifyObserver() {
-		for (Observer observer : observers)
-			observer.notify();
-	}
-
-	
-	public void update(String message) {
-		this.newsFeed.add(new Tweet(message));
-		
-		for (Observer observer : observers) {
-			((User) observer).lastUpdateTime = System.currentTimeMillis();
-			((User) observer).newsFeed.add(new Tweet(message));
-		}
-
-	}
-
-	
-	public void accept(Visitor visitor) {
-		visitor.visit(this);
-	}
-
 	
 	public boolean contains(String id) {
 		return this.id.equals(id);
+	}
+	
+	public String toString() {
+		return id;
+	}
+	
+	public User getUserByID(String id) {
+		if (this.id.equals(id))
+			return this;
+		else
+			return null;
+	}
+	
+	public int hashCode() {
+		int hash = 3;
+		hash = 29 * hash + Objects.hashCode(this.id);
+		return hash;
 	}
 
 	// A3 //
@@ -141,19 +117,34 @@ public class User extends Component {
 		return dateFormat.format(date);
 	}
 	// .. //
-
 	
-	public String toString() {
-		return id;
+	// // // //
+	public void register(Observer observer) {
+		this.observers.add(observer);
 	}
-
 	
-	public User getUserByID(String id) {
-		if (this.id.equals(id)) {
-			return this;
-		} else {
-			return null;
+	public void unregister(Observer observer) {
+		this.observers.remove(observer);
+	}
+	
+	public void notifyObserver() {
+		for (Observer observer : observers)
+			observer.notify();
+	}
+	
+	public void update(String message) {
+		this.newsFeed.add(new Tweet(message));
+		
+		for (Observer observer : observers) {
+			((User) observer).lastUpdateTime = System.currentTimeMillis();
+			((User) observer).newsFeed.add(new Tweet(message));
 		}
+		
 	}
+	
+	public void accept(Visitor visitor) {
+		visitor.visit(this);
+	}
+	// .. //
 
 }
