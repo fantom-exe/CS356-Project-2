@@ -59,14 +59,14 @@ public class User extends Component {
 		update(message);
 	}
 
-	@Override
+	
 	public int hashCode() {
 		int hash = 3;
 		hash = 29 * hash + Objects.hashCode(this.id);
 		return hash;
 	}
 
-	@Override
+	
 	public boolean equals(Object obj) {
 		// False
 		if (obj == null)
@@ -83,23 +83,23 @@ public class User extends Component {
 		return Objects.equals(this.id, other.id);
 	}
 
-	@Override
+	
 	public void register(Observer observer) {
 		this.observers.add(observer);
 	}
 
-	@Override
+	
 	public void unregister(Observer observer) {
 		this.observers.remove(observer);
 	}
 
-	@Override
+	
 	public void notifyObserver() {
 		for (Observer observer : observers)
 			observer.notify();
 	}
 
-	@Override
+	
 	public void update(String message) {
 		this.newsFeed.add(new Tweet(message));
 		
@@ -110,12 +110,12 @@ public class User extends Component {
 
 	}
 
-	@Override
+	
 	public void accept(Visitor visitor) {
 		visitor.visit(this);
 	}
 
-	@Override
+	
 	public boolean contains(String id) {
 		return this.id.equals(id);
 	}
@@ -140,12 +140,12 @@ public class User extends Component {
 	}
 	// .. //
 
-	@Override
+	
 	public String toString() {
 		return id;
 	}
 
-	@Override
+	
 	public User getUserByID(String id) {
 		if (this.id.equals(id)) {
 			return this;
