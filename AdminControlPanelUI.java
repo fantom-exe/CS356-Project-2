@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import static javax.swing.GroupLayout.DEFAULT_SIZE;
+
 public class AdminControlPanelUI extends javax.swing.JFrame {
 	// Singleton
 	public static AdminControlPanelUI instance;
@@ -167,16 +169,16 @@ public class AdminControlPanelUI extends javax.swing.JFrame {
 		javax.swing.GroupLayout addUserPanelLayout = new javax.swing.GroupLayout(addUserPanel);
 		addUserPanel.setLayout(addUserPanelLayout);
 		addUserPanelLayout.setHorizontalGroup(
-			addUserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-			.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addUserPanelLayout.createSequentialGroup()
-				.addContainerGap()
-				.addComponent(btnValidate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-				.addContainerGap())
+			addUserPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+			.addGroup(GroupLayout.Alignment.TRAILING, addUserPanelLayout.createSequentialGroup()
+				.addContainerGap(100, 300)
+				.addComponent(btnValidate, 10, 10, 250)
+				.addContainerGap(100, 300))
 		);
 		addUserPanelLayout.setVerticalGroup(
 			addUserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 			.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addUserPanelLayout.createSequentialGroup()
-				.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+				.addContainerGap(DEFAULT_SIZE, Short.MAX_VALUE)
 				.addComponent(btnValidate)
 				.addContainerGap())
 		);
@@ -194,14 +196,14 @@ public class AdminControlPanelUI extends javax.swing.JFrame {
 				.addContainerGap()
 				.addComponent(groupId, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
 				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-				.addComponent(btnAddGroup, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+				.addComponent(btnAddGroup, DEFAULT_SIZE, DEFAULT_SIZE, Short.MAX_VALUE)
 				.addContainerGap())
 		);
 		addUserPanel1Layout.setVerticalGroup(
 			addUserPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 			.addGroup(addUserPanel1Layout.createSequentialGroup()
 				.addGroup(addUserPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-					.addComponent(groupId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+					.addComponent(groupId, javax.swing.GroupLayout.PREFERRED_SIZE, DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
 					.addComponent(btnAddGroup))
 				.addGap(0, 14, Short.MAX_VALUE))
 		);
@@ -216,8 +218,9 @@ public class AdminControlPanelUI extends javax.swing.JFrame {
 		addUserPanel2Layout.setHorizontalGroup(
 			addUserPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 			.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addUserPanel2Layout.createSequentialGroup()
-				.addContainerGap()
-				.addComponent(btnOpenUserView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+				.addContainerGap(100, DEFAULT_SIZE)
+				.addComponent(btnOpenUserView, DEFAULT_SIZE, DEFAULT_SIZE, Short.MAX_VALUE)
+				.addContainerGap(100, DEFAULT_SIZE))
 		);
 		addUserPanel2Layout.setVerticalGroup(
 			addUserPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -237,7 +240,7 @@ public class AdminControlPanelUI extends javax.swing.JFrame {
 			.addGroup(addUserPanel3Layout.createSequentialGroup()
 				.addContainerGap()
 				.addComponent(labelUsersTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-				.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+				.addContainerGap(DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		addUserPanel3Layout.setVerticalGroup(
 			addUserPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -279,7 +282,7 @@ public class AdminControlPanelUI extends javax.swing.JFrame {
 			.addGroup(addUserPanel5Layout.createSequentialGroup()
 				.addContainerGap()
 				.addComponent(labelPositivePercentage, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-				.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+				.addContainerGap(DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		addUserPanel5Layout.setVerticalGroup(
 			addUserPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -322,14 +325,14 @@ public class AdminControlPanelUI extends javax.swing.JFrame {
 			.addGroup(addUserPanel7Layout.createSequentialGroup()
 				.addComponent(userId, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
 				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-				.addComponent(btnAddUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+				.addComponent(btnAddUser, DEFAULT_SIZE, DEFAULT_SIZE, Short.MAX_VALUE)
 				.addContainerGap())
 		);
 		addUserPanel7Layout.setVerticalGroup(
 			addUserPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 			.addGroup(addUserPanel7Layout.createSequentialGroup()
 				.addGroup(addUserPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-					.addComponent(userId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+					.addComponent(userId, javax.swing.GroupLayout.PREFERRED_SIZE, DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
 					.addComponent(btnAddUser))
 				.addGap(0, 14, Short.MAX_VALUE))
 		);
@@ -338,41 +341,41 @@ public class AdminControlPanelUI extends javax.swing.JFrame {
 		actionsPanel.setLayout(actionsPanelLayout);
 		actionsPanelLayout.setHorizontalGroup(
 			actionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-			.addComponent(addUserPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+			.addComponent(addUserPanel, javax.swing.GroupLayout.Alignment.TRAILING, DEFAULT_SIZE, DEFAULT_SIZE, Short.MAX_VALUE)
 			.addGroup(actionsPanelLayout.createSequentialGroup()
 				.addGroup(actionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-					.addComponent(addUserPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addComponent(addUserPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+					.addComponent(addUserPanel6, DEFAULT_SIZE, DEFAULT_SIZE, Short.MAX_VALUE)
+					.addComponent(addUserPanel3, DEFAULT_SIZE, DEFAULT_SIZE, Short.MAX_VALUE))
 				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 				.addGroup(actionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-					.addComponent(addUserPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addComponent(addUserPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-			.addComponent(addUserPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-			.addComponent(addUserPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-			.addComponent(addUserPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addComponent(addUserPanel4, DEFAULT_SIZE, DEFAULT_SIZE, Short.MAX_VALUE)
+					.addComponent(addUserPanel5, DEFAULT_SIZE, DEFAULT_SIZE, Short.MAX_VALUE)))
+			.addComponent(addUserPanel7, DEFAULT_SIZE, DEFAULT_SIZE, Short.MAX_VALUE)
+			.addComponent(addUserPanel1, DEFAULT_SIZE, DEFAULT_SIZE, Short.MAX_VALUE)
+			.addComponent(addUserPanel2, DEFAULT_SIZE, DEFAULT_SIZE, Short.MAX_VALUE)
 		);
 		actionsPanelLayout.setVerticalGroup(
 			actionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 			.addGroup(actionsPanelLayout.createSequentialGroup()
-				.addComponent(addUserPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+				.addComponent(addUserPanel, javax.swing.GroupLayout.PREFERRED_SIZE, DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
 				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-				.addComponent(addUserPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+				.addComponent(addUserPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
 				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-				.addComponent(addUserPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+				.addComponent(addUserPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
 				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-				.addComponent(addUserPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+				.addComponent(addUserPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
 				.addGap(11, 11, 11)
 				.addGroup(actionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-					.addComponent(addUserPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-					.addComponent(addUserPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+					.addComponent(addUserPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+					.addComponent(addUserPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
 				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
 				.addGroup(actionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-					.addComponent(addUserPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-					.addComponent(addUserPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+					.addComponent(addUserPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+					.addComponent(addUserPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
 		);
 
-		treeComponent.setBorder(javax.swing.BorderFactory.createTitledBorder("Tree View"));
-		treeComponent.setSize(500, 100);
+		treeComponent.setBorder(BorderFactory.createTitledBorder("Tree View"));
+		treeComponent.setSize(200, 100);
 		scrollPanel.setViewportView(treeComponent);
 
 		lastUpdatedUser.setEnabled(false);
@@ -386,21 +389,23 @@ public class AdminControlPanelUI extends javax.swing.JFrame {
 			layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 			.addGroup(layout.createSequentialGroup()
 				.addContainerGap()
-				.addComponent(scrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+				.addComponent(scrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout
+						.PREFERRED_SIZE)
 				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-					.addComponent(actionsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout
-							.DEFAULT_SIZE, Short.MAX_VALUE))
+					.addComponent(actionsPanel, DEFAULT_SIZE,
+							DEFAULT_SIZE, Short.MAX_VALUE))
 			));
 		layout.setVerticalGroup(
 			layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 			.addGroup(layout.createSequentialGroup()
 				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-					.addComponent(scrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
+					.addComponent(scrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout
+							.PREFERRED_SIZE)
 					.addGroup(layout.createSequentialGroup()
 						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addComponent(actionsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-				.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+						.addComponent(actionsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+				.addContainerGap(DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 
 		pack();
