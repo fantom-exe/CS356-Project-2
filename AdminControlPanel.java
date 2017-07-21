@@ -4,13 +4,7 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 public class AdminControlPanel extends javax.swing.JFrame {
-	
 	// Singleton
 	public static AdminControlPanel instance;
 	Component root = new Group("root", null);
@@ -19,15 +13,16 @@ public class AdminControlPanel extends javax.swing.JFrame {
 	static AdminControlPanel getInstance() {
 		if (instance == null) {
 			synchronized (AdminControlPanel.class) {
-				if (instance == null) {
+				if (instance == null)
 					instance = new AdminControlPanel();
-				}
 			}
 		}
+		
 		return instance;
 	}
 
-	public AdminControlPanel() {
+	AdminControlPanel() {
+		// Initialize
 		initComponents();
 		setTitle("Admin");
 		
@@ -51,7 +46,18 @@ public class AdminControlPanel extends javax.swing.JFrame {
 		CS356.insert(stu1); // cs356 -> stu1
 		CS356.insert(stu2); // cs356 -> stu2
 		CS356.insert(stu3); // cs356 -> stu3
-
+		
+		Group CS356Session01 = new Group("CS356Session01", CS356);
+		
+		CS356.insert(CS356Session01); // cs356 -> CS356Session01
+		
+		User stu8 = new User("stu8", CS356Session01); // CS356Session01 -> stu8
+		User stu9 = new User("stu9", CS356Session01); // CS356Session01 -> stu9
+		User stu10 = new User("stu10", CS356Session01); // CS356Session01 -> stu10
+		
+//		User stu8 = new User("stu8", CS356Session01); // CS356Session01 -> stu8
+		
+		
 		// Update user total
 		UserTotalVisitor totalUserVisitor = new UserTotalVisitor();
 		totalUserVisitor.visit(root);

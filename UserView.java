@@ -3,15 +3,14 @@ import java.util.*;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class UserView extends javax.swing.JFrame {
-	
+public class UserView extends JFrame {
 	private User user;
 	private Component root;
 	
 	private final DefaultListModel<String> followingModel = new DefaultListModel<>();
 	private final DefaultListModel<String> newsFeedModel = new DefaultListModel<>();
 
-	public UserView(User user, Component root) {
+	UserView(User user, Component root) {
 		this.user = user;
 		this.root = root;
 		
