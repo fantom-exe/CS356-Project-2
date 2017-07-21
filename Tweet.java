@@ -1,14 +1,11 @@
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Tweet {
 	private String message;
 	private boolean ispositive = false;
 
-	public Tweet(String message) {
-		this.message = message;
+	Tweet(String tweet) {
+		this.message = tweet;
 		this.ispositive = checkPositive();
 	}
 	
@@ -25,19 +22,16 @@ public class Tweet {
 		return false;
 	}
 	
-	
 	boolean isPositive() {
 		return ispositive;
+	}
+	
+	public String toString() {
+		return message;
 	}
 	
 	// Use toString instead
 	public String getMessage() {
 		return message;
 	}
-	
-	@Override
-	public String toString() {
-		return message;
-	}
-
 }
