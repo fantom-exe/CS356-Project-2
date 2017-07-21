@@ -372,6 +372,7 @@ public class AdminControlPanelUI extends javax.swing.JFrame {
 		);
 
 		treeComponent.setBorder(javax.swing.BorderFactory.createTitledBorder("Tree View"));
+		treeComponent.setSize(500, 100);
 		scrollPanel.setViewportView(treeComponent);
 
 		lastUpdatedUser.setEnabled(false);
@@ -574,7 +575,6 @@ public class AdminControlPanelUI extends javax.swing.JFrame {
 	private javax.swing.JPanel addUserPanel5;
 	private javax.swing.JPanel addUserPanel6;
 	private javax.swing.JPanel addUserPanel7;
-	private javax.swing.JPanel addUserPanel8;
 	private javax.swing.JButton btnAddGroup;
 	private javax.swing.JButton btnAddUser;
 	private javax.swing.JButton btnFindLastUpdate;
