@@ -31,7 +31,7 @@ public class User extends Component {
 		return newsFeed;
 	}
 
-	// unused
+	// not used
 	public void setId(String id) {
 		this.id = id;
 	}

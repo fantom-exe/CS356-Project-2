@@ -93,7 +93,7 @@ public class UserView extends JFrame {
 
 		UserPanel.setBorder(createTitledBorder("User:"));
 
-		jPanelFollowing.setBorder(createTitledBorder("Current Following"));
+		jPanelFollowing.setBorder(createTitledBorder("Following"));
 
 		followingList.setModel(new javax.swing.AbstractListModel<String>() {
 			String[] strings = {  };
@@ -147,11 +147,7 @@ public class UserView extends JFrame {
 		jPanelFollowing2.setBorder(createTitledBorder("Tweet"));
 
 		btnPostTweet.setText("Post Tweet");
-		btnPostTweet.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				btnPostTweetActionPerformed(evt);
-			}
-		});
+		btnPostTweet.addActionListener(evt -> btnPostTweetActionPerformed(evt));
 
 		tweetMessageText.setColumns(20);
 		tweetMessageText.setRows(2);
